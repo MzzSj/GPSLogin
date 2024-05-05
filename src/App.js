@@ -14,7 +14,7 @@ import OutTimePage from './OutTimePage'; // Import your OutTimePage component
 const App = () => {
   return (
     <Router>
-      <Routes>
+      <Routes basename="HomeScreen">
         <Route path="/" element={<HomeScreen />} />
         <Route path="/view-data" element={<ViewDataPage />} />
         <Route path="/crud" element={<Crud />} />
