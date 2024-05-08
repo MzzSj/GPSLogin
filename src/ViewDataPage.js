@@ -140,19 +140,7 @@ const ViewDataPage = () => {
 
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">{error}</p>}
-                <div className="filter-container">
-                    <input
-                        type="text"
-                        placeholder="Filter by Username, In Time, or Out Time"
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value)}
-                        className="input"
-                    />
-                    <button className="button" onClick={applyFilter}>Filter</button>
-                    <button className="button" onClick={filterByInTime}>Filter by In Time</button>
-                    <button className="button" onClick={filterByOutTime}>Filter by Out Time</button>
-                    <button className="button" onClick={downloadExcel}>Download Excel</button>
-                </div>
+                
                 <div className="list-container">
                     {(filteredData.length > 0 ? filteredData : data).map((entry) => (
                         <div key={entry.id} className="item">
@@ -170,6 +158,19 @@ const ViewDataPage = () => {
                         </div>
                     ))}
                 </div>
+                <div className="filter-container">
+                    <input
+                        type="text"
+                        placeholder="Filter by Username, In Time, or Out Time"
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                        className="input"
+                    />
+                    <button className="button" onClick={applyFilter}>Filter</button>
+                    <button className="button" onClick={filterByInTime}>In</button>
+                    <button className="button" onClick={filterByOutTime}>Out</button>
+                    <button className="button" onClick={downloadExcel}>Download</button>
+                </div>
             </div>
         </div>
     );
@@ -177,89 +178,4 @@ const ViewDataPage = () => {
 
 export default ViewDataPage;
 
-
-
-// one column view 2 uic id 
-// import React, { useState, useEffect } from 'react';
-// import { getDatabase, ref, onValue } from 'firebase/database';
-// import backgroundImage from './bgimg.jpg';
-// import backgroundVideo from './Bgv.mp4';
-// import './styles.css';
-
-// const ViewDataPage = () => {
-//     const [userData, setUserData] = useState({});
-//     const [loading, setLoading] = useState(false);
-//     const [error, setError] = useState(null);
-
-//     const fetchData = async () => {
-//         setLoading(true);
-//         setError(null);
-
-//         try {
-//             const database = getDatabase();
-//             const usersRef = ref(database, 'users');
-
-//             const unsubscribe = onValue(usersRef, (snapshot) => {
-//                 const usersData = snapshot.val() || {};
-
-//                 setUserData(usersData);
-//                 setLoading(false);
-//             });
-
-//             return () => unsubscribe();
-//         } catch (error) {
-//             setError(error.message);
-//             setLoading(false);
-//         }
-//     };
-
-//     useEffect(() => {
-//         fetchData();
-//     }, []);
-
-//     return (
-//         <div className="container">
-//             <video autoPlay muted loop className="videoBackground">
-//                 <source src={backgroundVideo} type="video/mp4" />
-//                 <img src={backgroundImage} alt="Background" className="imageFallback" />
-//             </video>
-//             <div className="content">
-//                 <h1 className="heading">User Data</h1>
-
-//                 {loading && <p>Loading...</p>}
-//                 {error && <p className="error">{error}</p>}
-//                 <div className="list-container">
-//                     {Object.entries(userData).map(([userName, userData]) => (
-//                         <div key={userName} className="item">
-//                             {Object.entries(userData).map(([entryKey, entryData]) => (
-//                                 <div key={entryKey}>
-//                                     <p>User: {userName}</p>
-//                                     {entryData.inTime && (
-//                                         <>
-//                                             <p>In Time: {entryData.inTime}</p>
-//                                             <p>In Time Place: {entryData.inTimePlace}</p>
-//                                             {entryData.inLocation && (
-//                                                 <p>In Location: Latitude: {entryData.inLocation.latitude}, Longitude: {entryData.inLocation.longitude}</p>
-//                                             )}
-//                                         </>
-//                                     )}
-//                                     {entryData.outTime && (
-//                                         <>
-//                                             <p>Out Time: {entryData.outTime}</p>
-//                                             <p>Out Time Place: {entryData.outTimePlace}</p>
-//                                             {entryData.outLocation && (
-//                                                 <p>Out Location: Latitude: {entryData.outLocation.latitude}, Longitude: {entryData.outLocation.longitude}</p>
-//                                             )}
-//                                         </>
-//                                     )}
-//                                 </div>
-//                             ))}
-//                         </div>
-//                     ))}
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default ViewDataPage;
+ 
