@@ -96,12 +96,11 @@ const ViewDataPage = () => {
             date: entry.date,
             inTime: entry.inTime,
             inTimePlace: entry.inTimePlace,
-            outTime: entry.outTime,
-            inTimePlace: entry.inTimePlace,
-            outTimePlace: entry.outTimePlace,
             'In Location Latitude': entry.inLocation?.latitude,
-            'Out Location Latitude': entry.outLocation?.latitude,
             'In Location Longitude': entry.inLocation?.longitude,
+            outTime: entry.outTime,
+            outTimePlace: entry.outTimePlace,
+            'Out Location Latitude': entry.outLocation?.latitude,
             'Out Location Longitude': entry.outLocation?.longitude,
         }));
     
@@ -112,11 +111,11 @@ const ViewDataPage = () => {
                 "date",
                 "inTime",
                 "inTimePlace",
+                "In Location Latitude",
+                "In Location Longitude",
                 "outTime",
                 "outTimePlace",
-                "In Location Latitude",
                 "Out Location Latitude",
-                "In Location Longitude",
                 "Out Location Longitude",
             ]
         });
