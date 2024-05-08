@@ -5,7 +5,7 @@ import backgroundImage from './bgimg.jpg'; // Import your background image
 import backgroundVideo from './Bgv.mp4'; // Import your background video
 import './styles.css'; // Import your stylesheet
 
-const HomeScreen = () => {
+const adminmid = () => {
     return (
         <div className="container">
             <video autoPlay muted loop className="videoBackground">
@@ -13,19 +13,21 @@ const HomeScreen = () => {
                 <img src={backgroundImage} alt="Background" className="imageFallback" />
             </video>
             <div className="content">
-                <h1 className="heading">GPS Login</h1>
+                <h1 className="heading">Admin Control Panel</h1>
                 <div className="buttonContainer">
-                    <Link to="/Admin" className="button">
-                        Admin
-                    </Link>
-                    <Link to="/login" className="button">
-                        User
+
+                    <Link to="/register" className="button">
+                    Registration
                     </Link>
 
+                    <Link to="/viewdata" className="button">
+                    User Entry 
+                    </Link>
+                    
                 </div>
             </div>
         </div>
     );
 };
 
-export default HomeScreen;
+export default adminmid;

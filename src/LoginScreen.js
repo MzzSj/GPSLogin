@@ -42,9 +42,9 @@ function Login() {
             // Check if the user is an admin
             if (userCredential.user) {
                 const { uid } = userCredential.user;
-                if (uid === 'GAi49VjslyWMuROyNt5mn2rtX5N2') {
+                if (uid === 'Lw7Rb77yebasOWUi6auwM6T7kRt2') {
                     // Redirect admin user to register page
-                    navigate('/register');
+                    navigate('/Adminmid');
                 } else {
                     // Redirect regular user to crud page
                     navigate('/crud');
