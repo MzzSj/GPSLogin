@@ -1,11 +1,7 @@
-
-// 2 calumn view 2 unic id  
 import React, { useState, useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx'; // Import XLSX library
-import backgroundImage from './bgimg.jpg';
-import backgroundVideo from './Bgv.mp4';
 import './styles.css';
 
 const ViewDataPage = () => {
@@ -84,7 +80,15 @@ const ViewDataPage = () => {
         const outTimeFilteredData = data.filter(user => user.outTime);
         setFilteredData(outTimeFilteredData);
     };
-    
+
+    const openGoogleMap = (location) => {
+        if (!location) {
+            // No location available
+            return;
+        }
+        const { latitude, longitude } = location;
+        window.open(`https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`);
+    };
 
     const downloadExcel = () => {
         let dataToDownload = filteredData.length > 0 ? filteredData : data; // Use filtered data if available
@@ -126,23 +130,32 @@ const ViewDataPage = () => {
         const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
         saveAs(blob, 'user_data.xlsx');
     };
-    
-    
 
     return (
-        <div className="container">
-            <video autoPlay muted loop className="videoBackground">
-                <source src={backgroundVideo} type="video/mp4" />
-                <img src={backgroundImage} alt="Background" className="imageFallback" />
-            </video>
-            <div className="content">
-                <h1 className="heading">User Data</h1>
+        <div className="all" >
 
+<div class="header">
+  <h1>My Website</h1>
+  <p>With a <b>flexible</b> layout.</p>
+</div>
+ 
+<div class="navbar">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+            <div className="row">
+
+          
+            
+
+            <div class="main">
+               
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">{error}</p>}
                 
-                <div className="list-container">
-                    {(filteredData.length > 0 ? filteredData : data).map((entry) => (
+                     {(filteredData.length > 0 ? filteredData : data).map((entry) => (
                         <div key={entry.id} className="item">
                             <p>User: {entry.name}</p>
                             {entry.inTime && <p>In Time: {entry.inTime}</p>}
@@ -150,32 +163,40 @@ const ViewDataPage = () => {
                             {entry.outTime && <p>Out Time: {entry.outTime}</p>}
                             {entry.outTimePlace && <p>Out Time Place: {entry.outTimePlace}</p>}
                             {entry.inLocation && (
-                                <p>In Location: Latitude: {entry.inLocation.latitude}, Longitude: {entry.inLocation.longitude}</p>
+                                <p>
+                                     Latitude: {entry.inLocation.latitude}, Longitude: {entry.inLocation.longitude}
+                                    <button className="button" onClick={() => openGoogleMap(entry.inLocation)}>Map</button>
+                                </p>
                             )}
                             {entry.outLocation && (
-                                <p>Out Location: Latitude: {entry.outLocation.latitude}, Longitude: {entry.outLocation.longitude}</p>
+                                <p>
+                                     Latitude: {entry.outLocation.latitude}, Longitude: {entry.outLocation.longitude}
+                                    <button className="button" onClick={() => openGoogleMap(entry.outLocation)}>Map</button>
+                                </p>
                             )}
                         </div>
                     ))}
-                </div>
-                <div className="filter-container">
+            </div>  
+
+                <div className="side">
                     <input
                         type="text"
                         placeholder="Filter by Username, In Time, or Out Time"
                         value={filter}
                         onChange={(e) => setFilter(e.target.value)}
                         className="input"
-                    />
+                    /> <div className="btn">
                     <button className="button" onClick={applyFilter}>Filter</button>
                     <button className="button" onClick={filterByInTime}>In</button>
                     <button className="button" onClick={filterByOutTime}>Out</button>
-                    <button className="button" onClick={downloadExcel}>Download</button>
+                    <button className="button" onClick={downloadExcel}>Download</button></div>
                 </div>
-            </div>
+            
         </div>
+        </div>
+        
+        
     );
 };
 
 export default ViewDataPage;
-
- 

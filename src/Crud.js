@@ -1,18 +1,12 @@
 // HomeScreen.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import backgroundImage from './bgimg.jpg'; // Import your background image
-import backgroundVideo from './Bgv.mp4'; // Import your background video
 import './styles.css'; // Import your stylesheet
 
-const HomeScreen = () => {
+const Crud = () => {
     return (
         <div className="container">
-            <video autoPlay muted loop className="videoBackground">
-                <source src={backgroundVideo} type="video/mp4" />
-                <img src={backgroundImage} alt="Background" className="imageFallback" />
-            </video>
-            <div className="content">
+                        <div className="content">
                 <h1 className="heading">GPS Login</h1>
                 <div className="buttonContainer">
                     <Link to="/time-in" className="button">
@@ -28,4 +22,4 @@ const HomeScreen = () => {
     );
 };
 
-export default HomeScreen;
+export default Crud;

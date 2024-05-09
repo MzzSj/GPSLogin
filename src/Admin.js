@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import backgroundImage from './bgimg.jpg'; // Import your background image
-import backgroundVideo from './Bgv.mp4'; // Import your background video
 import './styles.css'; // Import your stylesheet
 
 const firebaseConfig = {
@@ -58,12 +56,7 @@ function Admin() {
 
     return (
         <div className="container">
-            <video autoPlay muted loop className="videoBackground">
-                <source src={backgroundVideo} type="video/mp4" />
-                {/* Fallback image in case video is not loaded */}
-                <img src={backgroundImage} alt="Background" className="imageFallback" />
-            </video>
-            <div className="content">
+                      <div className="content">
                 <h2 className="heading">Login</h2>
                 <form onSubmit={handleSubmit} className="form">
                     <div className="inputGroup">
