@@ -47,7 +47,7 @@ function Admin() {
             // Check if the user is an admin
             if (userCredential.user) {
                 const { uid } = userCredential.user;
-                if (uid === 'Lw7Rb77yebasOWUi6auwM6T7kRt2') {
+                if (uid === '6n4eSlwp8QelpUjKyoTtTQ6LNf32') {
                     // Redirect admin user to register page
                     navigate('/Adminmid');
                 } else {
