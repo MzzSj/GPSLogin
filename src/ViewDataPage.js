@@ -5,6 +5,15 @@ import * as XLSX from 'xlsx'; // Import XLSX library
 import './styles.css';
 
 const ViewDataPage = () => {
+
+
+
+    useEffect(() => {
+        const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+        console.log('View loaded in:', loadTime, 'milliseconds');
+      }, []);
+
+
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -132,25 +141,26 @@ const ViewDataPage = () => {
     };
 
     return (
-        <div className="all" >
+
+        <>
 
 <div class="header">
-  <h1>My Website</h1>
-  <p>With a <b>flexible</b> layout.</p>
-</div>
+        <h3>Navigate Your World with Precision Explore</h3>
+         <h1>Orange Entry</h1> 
+        <p>We are Keep <b>Locate</b> Your Foot Print</p>
+      </div>
  
 <div class="navbar">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+    <a href="/">Home</a>
+    <a href="/viewdata">User Entry</a>
+    <a href="/register"> Registration</a> 
+ 
 </div>
-            <div className="row">
 
-          
-            
+        <div className="containerE" >
 
-            <div class="main">
+                    
+                <div class="contentE1">
                
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">{error}</p>}
@@ -178,22 +188,38 @@ const ViewDataPage = () => {
                     ))}
             </div>  
 
-                <div className="side">
+            <div className="contentE2">
                     <input
                         type="text"
                         placeholder="Filter by Username, In Time, or Out Time"
                         value={filter}
                         onChange={(e) => setFilter(e.target.value)}
-                        className="input"
-                    /> <div className="btn">
+                        className="input1"
+                    /> 
+                    
+                    <div className="btn">
                     <button className="button" onClick={applyFilter}>Filter</button>
                     <button className="button" onClick={filterByInTime}>In</button>
                     <button className="button" onClick={filterByOutTime}>Out</button>
                     <button className="button" onClick={downloadExcel}>Download</button></div>
                 </div>
+
             
+     
         </div>
-        </div>
+
+        
+        <div class="footer">
+  <h2>Orange Entry</h2>
+  <p className="text1" >Welcome to OrangeEntry, where we redefine location-based experiences. <br />
+  Harnessing the power of cutting-edge technology, our platform seamlessly 
+  integrates GPS data, real-time timestamps, and vivid imagery to provide you <br />
+  with unparalleled insights into your surroundings.
+    </p>
+    <h3>© 2024 Powered by MzzSj  </h3>
+</div>
+
+        </>
         
         
     );

@@ -1,4 +1,5 @@
-    import React, { useState } from 'react';
+    import React, { useState , useEffect } from 'react';
+  
     import { useNavigate } from 'react-router-dom';
     import { initializeApp } from "firebase/app";
     import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -18,6 +19,12 @@
     const app = initializeApp(firebaseConfig);
 
     function Register() {
+
+      useEffect(() => {
+        const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+        console.log('Register loaded in:', loadTime, 'milliseconds');
+      }, []);
+
       const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -63,8 +70,36 @@
       };
       
       return (
-        <div className="container">
-                <div className="content">
+
+        <>
+
+<div class="header">
+        <h3>Navigate Your World with Precision Explore</h3>
+         <h1>Orange Entry</h1> 
+        <p>We are Keep <b>Locate</b> Your Foot Print</p>
+      </div>
+
+        <div class="navbar">
+        <a href="/">Home</a>
+    <a href="/viewdata">User Entry</a>
+    <a href="/register"> Registration</a> 
+      </div>
+
+        <div className="containerC">
+             <div className="contentD1" style={{ 
+                        backgroundColor: '#f0f0f0', 
+                        padding: '20px',
+                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_key_girl_hand_nature_heaven_entrance_0.jpg?alt=media&token=0da3c6fd-df5a-447f-9c89-286b5de00bcd')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}  >
+                     
+                    <div className="buttonContainer">
+                                 </div>
+            </div>
+
+
+                      <div className="contentD2">
             <h2 className="heading">Register</h2>
             <form onSubmit={handleSubmit} className="form">
               <div className="inputGroup">
@@ -81,8 +116,18 @@
               </div>
               <button type="submit" className="button">Register</button>
             </form>
-          </div>
+            </div>
         </div>
+
+        
+        <div class="footer">
+  <h2>Orange Entry</h2>
+  <p>Welcome to OrangeEntry, where we redefine location-based experiences. Harnessing the power of cutting-edge technology, our platform seamlessly integrates GPS data, real-time timestamps, and vivid imagery to provide you with unparalleled insights into your surroundings.
+    </p>
+    <h3>© 2024 Powered by MzzSj  </h3>
+</div>
+
+        </>
       );
     }
 

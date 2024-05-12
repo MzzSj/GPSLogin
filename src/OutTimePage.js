@@ -5,6 +5,12 @@ import { getDatabase, ref, push, set } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 
 const Outtimee = () => {
+
+  useEffect(() => {
+    const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+    console.log('Out loaded in:', loadTime, 'milliseconds');
+  }, []);
+  
   const [name, setName] = useState('');
   const [outTime, setOutTime] = useState('');
   const [date, setDate] = useState('');
@@ -89,9 +95,40 @@ const Outtimee = () => {
   };
 
   return (
-    <div className="container">
-        <div className="content">
-        <h2 className="heading">Day Today Entry</h2>
+
+    <>
+
+          <div class="header">
+          <h3>Navigate Your World <br />with Precision Explore</h3>
+           <h1>Orange Entry</h1> 
+          <p>We are Keep <b>Locate</b> Your Foot Print</p>
+        </div>
+  
+  
+        <div class="navbar">
+        <a href="/">Home</a>
+          <a href="/time-in">In Time</a>
+          <a href="/time-out">Out Time</a> 
+        </div>
+
+
+    <div className="containerC">
+
+    <div className="contentD1" style={{ 
+                          backgroundColor: '#f0f0f0', 
+                          padding: '20px',
+                          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_one_man_horse_riding_enter_in_city_of_full_nature_tre_0.jpg?alt=media&token=822c76a1-b3f9-44ac-9ad3-aaab48eb863c')`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                      }}  >
+                       
+                      <div className="buttonContainer">
+                        
+                                   </div>
+              </div>
+      
+        <div className="contentD2">
+        <h2 className="heading">Out Time Entry</h2>
         <div className="form">
           <input
             type="text"
@@ -135,7 +172,15 @@ const Outtimee = () => {
           <button onClick={insertData} className="button">Add Data</button>
         </div>
       </div>
+
+
     </div>
+            <div class="footer">
+                <h2>Orange Entry</h2>
+                  <p>Welcome to OrangeEntry, where we redefine location-based experiences. Harnessing the power of cutting-edge technology, our platform seamlessly integrates GPS data, real-time timestamps, and vivid imagery to provide you with unparalleled insights into your surroundings.</p>
+                    <h3>© 2024 Powered by MzzSj  </h3>
+                      </div>
+    </>
   );
 };
 

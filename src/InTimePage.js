@@ -5,6 +5,13 @@ import './styles.css';
 import { useNavigate } from 'react-router-dom'; 
 
 const Intimee = () => {
+
+  useEffect(() => {
+    const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+    console.log(' in loaded in:', loadTime, 'milliseconds');
+  }, []);
+
+
   const [name, setName] = useState('');
   const [inTime, setInTime] = useState('');
   const [date, setDate] = useState('');
@@ -89,10 +96,40 @@ const Intimee = () => {
   };
   
   return (
-    <div className="container">
+
+    <>
+
+<div class="header">
+          <h3>Navigate Your World  with Precision Explore</h3>
+           <h1>Orange Entry</h1> 
+          <p>We are Keep <b>Locate</b> Your Foot Print</p>
+        </div>
+  
+  
+        <div class="navbar">
+        <a href="/">Home</a>
+          <a href="/time-in">In Time</a>
+          <a href="/time-out">Out Time</a> 
+        </div>
+
+
+    <div className="containerC">
+
+    <div className="contentD1" style={{ 
+                          backgroundColor: '#f0f0f0', 
+                          padding: '20px',
+                          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_one_man_horse_riding_enter_in_city_of_nature_0.jpg?alt=media&token=434dca65-8d89-4de2-9fd5-43caf6364ee2')`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                      }}  >
+                       
+                      <div className="buttonContainer">
+                        
+                                   </div>
+              </div>
    
-      <div className="content">
-        <h2 className="heading">Day Today Entry</h2>
+      <div className="contentD2">
+        <h2 className="heading">In Today Entry</h2>
         <div className="form">
           <input
             type="text"
@@ -139,6 +176,14 @@ const Intimee = () => {
         </div>
       </div>
     </div>
+
+                <div class="footer">
+                <h2>Orange Entry</h2>
+                  <p>Welcome to OrangeEntry, where we redefine location-based experiences. Harnessing the power of cutting-edge technology, our platform seamlessly integrates GPS data, real-time timestamps, and vivid imagery to provide you with unparalleled insights into your surroundings.</p>
+                    <h3>© 2024 Powered by MzzSj  </h3>
+                      </div>
+
+    </>
   );
 };
 

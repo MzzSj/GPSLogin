@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import backgroundImage from './bgimg.jpg'; // Import your background image
-import backgroundVideo from './Bgv.mp4'; // Import your background video
 import './styles.css'; // Import your stylesheet
 
 const firebaseConfig = {
@@ -19,7 +17,14 @@ const firebaseConfig = {
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 
-function Login() {
+function Admin() {
+
+    useEffect(() => {
+        const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+        console.log('Login loaded in:', loadTime, 'milliseconds');
+      }, []);
+
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -57,28 +62,60 @@ function Login() {
     };
 
     return (
-        <div className="container">
-            <video autoPlay muted loop className="videoBackground">
-                <source src={backgroundVideo} type="video/mp4" />
-                {/* Fallback image in case video is not loaded */}
-                <img src={backgroundImage} alt="Background" className="imageFallback" />
-            </video>
-            <div className="content">
+
+<>
+<div class="header">
+        <h3>Navigate Your World with Precision Explore</h3>
+         <h1>Orange Entry</h1> 
+        <p>We are Keep <b>Locate</b> Your Foot Print</p>
+      </div>
+
+        <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/login">Admin</a>
+        <a href="/login">User</a> 
+      </div>
+
+        <div className="containerC">
+             <div className="contentD1" style={{ 
+                        backgroundColor: '#f0f0f0', 
+                        padding: '20px',
+                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_key_girl_hand_nature_heaven_entrance_0.jpg?alt=media&token=0da3c6fd-df5a-447f-9c89-286b5de00bcd')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}  >
+                     
+                    <div className="buttonContainer">
+                                 </div>
+            </div>
+
+
+                      <div className="contentD2">
                 <h2 className="heading">Login</h2>
                 <form onSubmit={handleSubmit} className="form">
                     <div className="inputGroup">
-                        <label htmlFor="email" className="label">Email</label>
+                        <label htmlFor="email" className="label">Email  </label>
                         <input type="text" id="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} className="input" />
                     </div>
                     <div className="inputGroup">
-                        <label htmlFor="password" className="label">Password</label>
+                        <label htmlFor="password" className="label">Password  </label>
                         <input type="password" id="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} className="input" />
                     </div>
                     <button type="submit" className="button">Login</button>
                 </form>
             </div>
         </div>
+
+        
+        <div class="footer">
+  <h2>Orange Entry</h2>
+  <p>Welcome to OrangeEntry, where we redefine location-based experiences. Harnessing the power of cutting-edge technology, our platform seamlessly integrates GPS data, real-time timestamps, and vivid imagery to provide you with unparalleled insights into your surroundings.
+    </p>
+    <h3>© 2024 Powered by MzzSj  </h3>
+</div>
+        </>
     );
 }
 
-export default Login;
+
+export default Admin;

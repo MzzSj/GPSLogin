@@ -1,19 +1,11 @@
 // HomeScreen.js
- 
-import React, {  useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import backgroundImage from './bgimg.jpg'; // Import your background image
+import backgroundVideo from './Bgv.mp4'; // Import your background video
 import './styles.css'; // Import your stylesheet
 
-const Adminmid = () => {
-
-    useEffect(() => {
-        const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-        console.log('Mid loaded in:', loadTime, 'milliseconds');
-      }, []);
-
-   
-
+const Feedbk = () => {
     return (
 
 
@@ -34,7 +26,8 @@ const Adminmid = () => {
 
         <div className="container"  >
             <div className="content2"  >
-            <h2 className="heading">Admin Control Panel</h2>
+            <h2 className="heading">Feedback</h2>
+            <h3 className="heading">Testing and developing stages are crucial for refining and perfecting a website. If you encounter any issues or need assistance with testing or development tasks, feel free to ask. I'm here to help!</h3>
                     <div className="text1">
                     <p>
                     <span> ★ Pinpoint Accuracy: Discover your exact location with pinpoint accuracy, <br />ensuring you never lose your way again.</span><br />
@@ -89,4 +82,4 @@ const Adminmid = () => {
     );
 };
 
-export default Adminmid;
+export default Feedbk;
