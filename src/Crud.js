@@ -35,16 +35,26 @@ const Crud = () => {
                       <span> ★ Pinpoint Accuracy: Discover your exact location with pinpoint accuracy, ensuring you never lose your way again.</span><br />
                       <span> ★ Timely Insights: Stay informed with real-time timestamps, empowering you to make informed decisions based on the latest data. </span><br />
                       <span> ★ Capture the Moment: Capture the beauty of your journey with high-quality images, preserving memories that last a lifetime.</span><br />
-                      {/* <span> ★ Customizable Solutions: Tailor our platform to suit your unique needs, whether it's for personal exploration or business optimization.</span><br />
-                      <span> ★ User-Friendly Interface: Experience intuitive navigation and seamless functionality, designed with your convenience in mind.</span> */}
                       </p>
+                      <div className="buttonContainer">
+
+                        <Link to="/time-in" className="button">
+                        In Time
+                        </Link>
+
+                        <Link to="/time-out" className="button">
+                        Out Time
+                        </Link>
+
+                        </div>
+                    
                   </div>
               </div>
   
               <div className="content3" style={{ 
                           backgroundColor: '#f0f0f0', 
                           padding: '20px',
-                          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_The_cute_girl_look_like_traveler_her_hand_map_sheet_th_0%20(1).jpg?alt=media&token=47bce354-b009-4225-b145-a55e87256980')`,
+                          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_one_man_start_work_0.jpg?alt=media&token=1576cc2d-c83e-4c9a-a0a6-4ed2ee20540d')`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center',
                       }}  >

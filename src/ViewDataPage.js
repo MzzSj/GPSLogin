@@ -165,27 +165,29 @@ const ViewDataPage = () => {
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">{error}</p>}
                 
-                     {(filteredData.length > 0 ? filteredData : data).map((entry) => (
-                        <div key={entry.id} className="item">
-                            <p>User: {entry.name}</p>
-                            {entry.inTime && <p>In Time: {entry.inTime}</p>}
-                            {entry.inTimePlace && <p>In Time Place: {entry.inTimePlace}</p>}
-                            {entry.outTime && <p>Out Time: {entry.outTime}</p>}
-                            {entry.outTimePlace && <p>Out Time Place: {entry.outTimePlace}</p>}
-                            {entry.inLocation && (
-                                <p>
-                                     Latitude: {entry.inLocation.latitude}, Longitude: {entry.inLocation.longitude}
-                                    <button className="button" onClick={() => openGoogleMap(entry.inLocation)}>Map</button>
-                                </p>
-                            )}
-                            {entry.outLocation && (
-                                <p>
-                                     Latitude: {entry.outLocation.latitude}, Longitude: {entry.outLocation.longitude}
-                                    <button className="button" onClick={() => openGoogleMap(entry.outLocation)}>Map</button>
-                                </p>
-                            )}
-                        </div>
-                    ))}
+                {(filteredData.length > 0 ? filteredData : data).map((entry) => (
+    <div key={entry.id} className="item">
+        <p>User: {entry.name}</p>
+        {entry.date && <p>Date: {entry.date}</p>}
+        {entry.inTime && <p>In Time: {entry.inTime}</p>}
+        {entry.inTimePlace && <p>In Time Place: {entry.inTimePlace}</p>}
+        {entry.outTime && <p>Out Time: {entry.outTime}</p>}
+        {entry.outTimePlace && <p>Out Time Place: {entry.outTimePlace}</p>}
+        {entry.inLocation && (
+            <p>
+                Latitude: {entry.inLocation.latitude}, Longitude: {entry.inLocation.longitude}
+                <button className="button" onClick={() => openGoogleMap(entry.inLocation)}>Map</button>
+            </p>
+        )}
+        {entry.outLocation && (
+            <p>
+                Latitude: {entry.outLocation.latitude}, Longitude: {entry.outLocation.longitude}
+                <button className="button" onClick={() => openGoogleMap(entry.outLocation)}>Map</button>
+            </p>
+        )}
+    </div>
+))}
+
             </div>  
 
             <div className="contentE2">

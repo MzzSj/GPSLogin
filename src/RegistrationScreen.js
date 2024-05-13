@@ -89,12 +89,13 @@
              <div className="contentD1" style={{ 
                         backgroundColor: '#f0f0f0', 
                         padding: '20px',
-                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_key_girl_hand_nature_heaven_entrance_0.jpg?alt=media&token=0da3c6fd-df5a-447f-9c89-286b5de00bcd')`,
+                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_They_are_10_years_old_0.jpg?alt=media&token=47d6234c-f9ab-45a3-8031-cae1162bb42a')`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}  >
                      
                     <div className="buttonContainer">
+                      
                                  </div>
             </div>
 
@@ -114,7 +115,7 @@
                 <label htmlFor="password" className="label">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" value={formData.password} onChange={handleChange} className="input" />
               </div>
-              <button type="submit" className="button">Register</button>
+              <button type="submit" className="button">Register</button> 
             </form>
             </div>
         </div>

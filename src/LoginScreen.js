@@ -80,7 +80,7 @@ function Admin() {
              <div className="contentD1" style={{ 
                         backgroundColor: '#f0f0f0', 
                         padding: '20px',
-                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_key_girl_hand_nature_heaven_entrance_0.jpg?alt=media&token=0da3c6fd-df5a-447f-9c89-286b5de00bcd')`,
+                        backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/gsplogin-a5e22.appspot.com/o/OrangeEntry%2FDefault_They_need_help_0.jpg?alt=media&token=5e52703c-8114-41e3-92db-c40c1b421e0a')`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}  >

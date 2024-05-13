@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';  
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './styles.css';
 
 const HomeScreen = () => {
@@ -36,6 +37,19 @@ const HomeScreen = () => {
                     {/* <span> ★ Customizable Solutions: Tailor our platform to suit your unique needs, whether it's for personal exploration or business optimization.</span><br />
                     <span> ★ User-Friendly Interface: Experience intuitive navigation and seamless functionality, designed with your convenience in mind.</span> */}
                     </p>
+                    <div className="buttonContainer">
+
+                    <Link to="/login" className="button">
+                    Admin
+                    </Link>
+
+                    <Link to="/login" className="button">
+                    User 
+                    </Link>
+
+                    </div>
+
+                    
                 </div>
             </div>
 
