@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';  
+import React, { useEffect } from 'react';  
 import './styles.css';
 
 const HomeScreen = () => {
@@ -11,14 +11,14 @@ const HomeScreen = () => {
   
   return (
     <>
-      <div class="header">
+      <div className="header">
         <h3>Navigate Your World with Precision Explore</h3>
          <h1>Orange Entry</h1> 
         <p>We are Keep <b>Locate</b> Your Foot Print</p>
       </div>
 
 
-      <div class="navbar">
+      <div className="navbar">
         <a href="/">Home</a>
         <a href="/login">Admin</a>
         <a href="/login">User</a> 
@@ -110,7 +110,7 @@ const HomeScreen = () => {
             </div>
          </div>
 
-            <div class="footer">
+            <div className="footer">
   <h2>Orange Entry</h2>
   <p className="text1" >Welcome to OrangeEntry, where we redefine location-based experiences. <br />
   Harnessing the power of cutting-edge technology, our platform seamlessly 

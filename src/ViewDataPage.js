@@ -144,13 +144,13 @@ const ViewDataPage = () => {
 
         <>
 
-<div class="header">
+<div className="header">
         <h3>Navigate Your World with Precision Explore</h3>
          <h1>Orange Entry</h1> 
         <p>We are Keep <b>Locate</b> Your Foot Print</p>
       </div>
  
-<div class="navbar">
+<div className="navbar">
     <a href="/">Home</a>
     <a href="/viewdata">User Entry</a>
     <a href="/register"> Registration</a> 
@@ -160,7 +160,7 @@ const ViewDataPage = () => {
         <div className="containerE" >
 
                     
-                <div class="contentE1">
+                <div className="contentE1">
                
                 {loading && <p>Loading...</p>}
                 {error && <p className="error">{error}</p>}
@@ -209,7 +209,7 @@ const ViewDataPage = () => {
         </div>
 
         
-        <div class="footer">
+        <div className="footer">
   <h2>Orange Entry</h2>
   <p className="text1" >Welcome to OrangeEntry, where we redefine location-based experiences. <br />
   Harnessing the power of cutting-edge technology, our platform seamlessly 

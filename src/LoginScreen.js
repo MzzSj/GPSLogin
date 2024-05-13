@@ -64,13 +64,13 @@ function Admin() {
     return (
 
 <>
-<div class="header">
+<div className="header">
         <h3>Navigate Your World with Precision Explore</h3>
          <h1>Orange Entry</h1> 
         <p>We are Keep <b>Locate</b> Your Foot Print</p>
       </div>
 
-        <div class="navbar">
+        <div className="navbar">
         <a href="/">Home</a>
         <a href="/login">Admin</a>
         <a href="/login">User</a> 
@@ -107,7 +107,7 @@ function Admin() {
         </div>
 
         
-        <div class="footer">
+        <div className="footer">
   <h2>Orange Entry</h2>
   <p>Welcome to OrangeEntry, where we redefine location-based experiences. Harnessing the power of cutting-edge technology, our platform seamlessly integrates GPS data, real-time timestamps, and vivid imagery to provide you with unparalleled insights into your surroundings.
     </p>
