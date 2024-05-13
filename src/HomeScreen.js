@@ -27,7 +27,7 @@ const HomeScreen = () => {
 
         <div className="container"  >
             <div className="content2"  >
-                    <h1 className="heading">Engaging Features</h1>
+                    <h1 className="heading">Engaging Features!</h1>
                     <div className="text1">
                     <p>
                     <span> ★ Pinpoint Accuracy: Discover your exact location with pinpoint accuracy, <br />ensuring you never lose your way again.</span><br />
